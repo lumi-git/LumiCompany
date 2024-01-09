@@ -1,9 +1,7 @@
 ﻿using BepInEx;
 using GameNetcodeStuff;
-using Unity;
 using HarmonyLib;
 using UnityEngine;
-
 namespace LumiCompany
 {
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
@@ -22,7 +20,11 @@ namespace LumiCompany
             var harmony = new Harmony("LumiCompany");
             harmony.PatchAll(typeof(BaseUnityPlugin));
             harmony.PatchAll(typeof(PlayerControllerBPatch));
-            
+            //search for a canva object
+            GameObject canvas = GameObject.Find("Canvas");
+            Logger.LogInfo($"Canvas found");
+            Logger.LogInfo(canvas);
+
         }
 
     }
@@ -36,6 +38,9 @@ namespace LumiCompany
         {
             // Prevent stamina from decreasing
             ___sprintMeter = 1f;
+
+
         }
     }
+
 }

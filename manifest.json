@@ -1,0 +1,7 @@
+{
+    "name": "LumiCompany",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/lumi-git/LumiCompany/",
+    "description": "A mod to test the api and make fun :D",
+    "dependencies": ["BepInEx-BepInExPack-5.4.2100"]
+}
